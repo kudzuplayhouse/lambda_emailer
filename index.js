@@ -52,8 +52,8 @@ var buildEmail = function(template, context, event, config) {
 
     var mark = require('markup-js');
 
-    params.Message.Subject.Data = mark(config.defaultSubject, event.data);
-    params.Message.Body.Html.Data = mark(template, event.data);
+    params.Message.Subject.Data = mark.up(config.defaultSubject, event.data);
+    params.Message.Body.Html.Data = mark.up(template, event.data);
 
     sendEmail(params, context);
 };
